@@ -1,34 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
+import useState from "react-usestateref";
 import DigitRoll from "digit-roll-react";
 import './index.css'
 
 import Button from '@mui/material/Button';
 
-class DigitalRaffle extends Component {
-  state = { num: 0, member: 1000 };
+const DigitalRaffle = (props) => {
+  console.log('rem', props.att)
+  const [member, setMember, memberRef] = useState(props.att)
+  const [num, setNum, numRef] = useState(0)
 
-  refresh = () => {
-    this.setState({
-      num: Math.floor(Math.random() * 1000)
-    });
-  };
+    const handleClick = () => {
+           setNum(Math.floor(Math.random() * parseInt(memberRef.current)))
+    }
 
-handleClick = () => {
-    this.setState({
-        num: Math.floor(Math.random() * this.state.member)
-      });
-  }
-
-  render() {
+ 
     return (
         <div className="App">
-        <DigitRoll num={this.state.num} length={4} divider="" delay="0.8" />
-        <Button variant="contained" color="success" size="large" onClick={this.handleClick}>
+        <DigitRoll num={numRef.current} length={4} divider="" delay="0.7" />
+        <Button variant="contained" color="success" size="large" onClick={handleClick}>
          PLAY ROLL!
         </Button>
       </div>
     );
-  }
 }
 
 export default DigitalRaffle;
