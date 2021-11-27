@@ -1,0 +1,30 @@
+.DigitRoll {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(4, 67, 27);
+  border: none;
+}
+
+.DigitRoll__Cell {
+  background: rgb(240, 226, 33);
+  margin: 0 3px;
+  border: 1px solid rgb(31, 29, 1);
+  width: 5rem !important;
+  height: 3rem !important;
+  border-radius: 4px;
+}
+
+.DigitRoll__Divider {
+  font-size: 25px;
+  color: black;
+  padding: 0 0px;
+}
+  
+  .App {
+    height: 50vh;
+    width: 150;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
